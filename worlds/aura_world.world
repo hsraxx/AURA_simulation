@@ -1,0 +1,25 @@
+<world name="aura_world">
+  <include><uri>model://ground_plane</uri></include>
+  <include><uri>model://sun</uri></include>
+
+  <model name="shelf1">
+    <static>true</static>
+    <link name="link">
+      <visual>
+        <geometry><box><size>1 0.2 1.5</size></box></geometry>
+        <pose>0 2 0.75 0 0 0</pose>
+      </visual>
+    </link>
+  </model>
+
+  <model name="shelf2">
+    <static>true</static>
+    <link name="link">
+      <visual>
+        <geometry><box><size>1 0.2 1.5</size></box></geometry>
+        <pose>2 2 0.75 0 0 0</pose>
+      </visual>
+    </link>
+  </model>
+</world>
+
