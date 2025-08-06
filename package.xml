@@ -3,9 +3,33 @@
 <package format="3">
   <name>aura_simulation</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="maidah@todo.todo">maidah</maintainer>
-  <license>TODO: License declaration</license>
+  <description>AURA autonomous library assistant robot simulation package for ROS2 Foxy</description>
+  <maintainer email="maidah@example.com">maidah</maintainer>
+  <license>Apache License 2.0</license>
+
+  <!-- ROS2 Dependencies -->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>rviz2</depend>
+  <depend>xacro</depend>
+  <depend>urdf</depend>
+  <depend>urdfdom</depend>
+  <depend>urdfdom_py</depend>
+  
+  <!-- Gazebo Dependencies -->
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros2_control</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>diff_drive_controller</depend>
+  <depend>controller_manager</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
@@ -14,5 +38,7 @@
 
   <export>
     <build_type>ament_python</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+    <gazebo_ros gazebo_media_path="${prefix}/worlds"/>
   </export>
 </package>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Material definitions for AURA robot -->
+  
+  <!-- Base robot material -->
+  <material name="aura_blue">
+    <color rgba="0.2 0.4 0.8 1.0"/>
+  </material>
+  
+  <!-- Wheel material -->
+  <material name="wheel_black">
+    <color rgba="0.1 0.1 0.1 1.0"/>
+  </material>
+  
+  <!-- Lidar material -->
+  <material name="lidar_red">
+    <color rgba="0.8 0.2 0.2 1.0"/>
+  </material>
+  
+  <!-- Camera material -->
+  <material name="camera_gray">
+    <color rgba="0.6 0.6 0.6 1.0"/>
+  </material>
+  
+  <!-- Caster wheel material -->
+  <material name="caster_gray">
+    <color rgba="0.4 0.4 0.4 1.0"/>
+  </material>
+
+</robot>
