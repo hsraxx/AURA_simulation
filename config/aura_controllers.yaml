@@ -1,0 +1,61 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+
+    wheel_separation: 0.4
+    wheel_radius: 0.06
+
+    use_stamped_vel: false
+
+    # Velocity and acceleration limits
+    linear.x.has_velocity_limits: true
+    linear.x.max_velocity: 1.0
+    linear.x.min_velocity: -1.0
+    linear.x.has_acceleration_limits: true
+    linear.x.max_acceleration: 2.0
+    linear.x.min_acceleration: -2.0
+
+    angular.z.has_velocity_limits: true
+    angular.z.max_velocity: 2.0
+    angular.z.min_velocity: -2.0
+    angular.z.has_acceleration_limits: true
+    angular.z.max_acceleration: 4.0
+    angular.z.min_acceleration: -4.0
+
+    # Publish rate for odometry
+    publish_rate: 50.0
+
+    # Odometry frame
+    odometry_frame: odom
+    base_frame_id: base_link
+
+    # Enable/disable odometry publishing
+    enable_odom_tf: true
+
+    # Odometry source
+    odometry_source: world
+
+    # Command timeout
+    cmd_vel_timeout: 0.5
+
+    # PID gains for wheel velocity control
+    left_wheel_controller:
+      type: velocity_controllers/JointVelocityController
+      joint: left_wheel_joint
+      pid: {p: 100.0, i: 1.0, d: 10.0}
+
+    right_wheel_controller:
+      type: velocity_controllers/JointVelocityController
+      joint: right_wheel_joint
+      pid: {p: 100.0, i: 1.0, d: 10.0}

@@ -1,25 +1,144 @@
+<?xml version="1.0" ?>
 <world name="aura_world">
-  <include><uri>model://ground_plane</uri></include>
-  <include><uri>model://sun</uri></include>
-
-  <model name="shelf1">
+  <!-- A simple flat world for AURA robot simulation -->
+  
+  <!-- Include basic world elements -->
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  
+  <!-- Lighting -->
+  <light type="directional" name="sun">
+    <cast_shadows>true</cast_shadows>
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.2 0.2 0.2 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>-0.5 0.1 -0.9</direction>
+  </light>
+  
+  <!-- Physics settings -->
+  <physics type="ode">
+    <max_step_size>0.001</max_step_size>
+    <real_time_factor>1</real_time_factor>
+    <real_time_update_rate>1000</real_time_update_rate>
+    <gravity>0 0 -9.81</gravity>
+  </physics>
+  
+  <!-- Simple environment for testing -->
+  <!-- Add some basic obstacles for testing navigation -->
+  <model name="wall1">
     <static>true</static>
     <link name="link">
+      <collision>
+        <geometry>
+          <box>
+            <size>0.1 2 1</size>
+          </box>
+        </geometry>
+      </collision>
       <visual>
-        <geometry><box><size>1 0.2 1.5</size></box></geometry>
-        <pose>0 2 0.75 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 2 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
       </visual>
+      <pose>3 0 0.5 0 0 0</pose>
     </link>
   </model>
-
-  <model name="shelf2">
+  
+  <model name="wall2">
     <static>true</static>
     <link name="link">
+      <collision>
+        <geometry>
+          <box>
+            <size>0.1 2 1</size>
+          </box>
+        </geometry>
+      </collision>
       <visual>
-        <geometry><box><size>1 0.2 1.5</size></box></geometry>
-        <pose>2 2 0.75 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 2 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
       </visual>
+      <pose>-3 0 0.5 0 0 0</pose>
     </link>
   </model>
+  
+  <model name="wall3">
+    <static>true</static>
+    <link name="link">
+      <collision>
+        <geometry>
+          <box>
+            <size>6 0.1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual>
+        <geometry>
+          <box>
+            <size>6 0.1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <pose>0 2 0.5 0 0 0</pose>
+    </link>
+  </model>
+  
+  <model name="wall4">
+    <static>true</static>
+    <link name="link">
+      <collision>
+        <geometry>
+          <box>
+            <size>6 0.1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual>
+        <geometry>
+          <box>
+            <size>6 0.1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+          <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <pose>0 -2 0.5 0 0 0</pose>
+    </link>
+  </model>
+  
 </world>
 
