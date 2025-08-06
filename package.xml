@@ -3,10 +3,23 @@
 <package format="3">
   <name>aura_simulation</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="maidah@todo.todo">maidah</maintainer>
-  <license>TODO: License declaration</license>
+  <description>AURA robot simulation package for ROS2 Foxy - autonomous library assistant robot</description>
+  <maintainer email="maidah@example.com">Maidah Arsh</maintainer>
+  <license>Apache License 2.0</license>
 
+  <!-- Build dependencies -->
+  <depend>rclpy</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>xacro</depend>
+  <depend>urdf</depend>
+  <depend>rviz2</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>gazebo_ros2_control</depend>
+
+  <!-- Test dependencies -->
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
